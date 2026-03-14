@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style>
+        html {
+  scroll-behavior: smooth;
+}
+        body {
+  background-color: #121212; 
+  color: white;
+  margin: 0;
+  display : flex;
+  flex-direction: column;
+    height: auto;
+}
+h1 {
+  font-size: 4rem;          /* Makes the brand name huge and bold */
+  letter-spacing: 15px;    /* Adds that "luxury brand" air between letters */
+  margin-bottom: 5px;     /* Pushes the slogan down slightly */
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+p {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #888;          /* A softer grey so the main title stands out more */
+  font-family: 'Lato', sans-serif;
+}
+button {
+    padding: 10px 25px;
+    background-color: #c5a059;
+    border: 0px;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: transparent;
+    color: #c5a059;
+    border: 1px solid #c5a059;
+}
+.hero-section {
+    min-height: 100vh; /* Changed from height to min-height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=2560&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 60px 20px;
+}   
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* This creates 3 equal columns */
+    gap: 40px;                             /* Space between the boxes */
+    padding: 80px 20%;                    /* Space around the whole section */
+    background-color: #1a1a1a;             /* Slightly lighter than the hero */
+}
+
+.feature-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-card h3 {
+    color: #c5a059; /* Our gold color */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+.navbar {
+    position: absolute; /* This makes it float over the hero image */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left and links to right */
+    align-items: center;
+    padding: 20px 50px;
+    box-sizing: border-box; /* Prevents padding from making the bar too wide */
+    z-index: 10; /* Ensures it stays in front of everything else */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for visibility */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    list-style: none; /* Removes those bullet points */
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    text-decoration: none; /* Removes the blue underline */
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+.main-footer {
+    background-color: #0d0d0d; /* Even darker than the body */
+    padding: 60px 20px;
+    border-top: 1px solid #222; /* A subtle "line" to separate it from the content */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content p {
+    font-size: 0.8rem;
+    color: #666; /* Muted text so it doesn't distract */
+    letter-spacing: 1px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c5a059; /* Using our brand gold */
+}
+.hero-link {
+    text-decoration: none; /* Removes any accidental underlines */
+}
+.menu-toggle {
+    display: none; /* Hide it on desktop! */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #c5a059; /* Our brand gold */
+    transition: 0.3s;
+}
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* Rounds the corners slightly */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Lifts the card up slightly */
+    background-color: #252525;    /* Slightly lighter background on hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Adds a shadow for depth */
+}
+/* This only triggers on screens smaller than 768px */
+@media (max-width: 768px) {
+    
+    .hero-section h1 {
+        font-size: 3rem; /* Make the title a bit smaller for phones */
+    font-size: 5rem;
+    letter-spacing: 15px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(197, 160, 89, 0.3); /* Subtle gold glow */
+
+    }
+    .hero-watch-image {
+        max-width: 250px;
+    }
+
+    .features {
+        grid-template-columns: 1fr; /* Change from 3 columns to 1 column! */
+        padding: 40px 5%;       /* Reduce padding so text has more room */
+    }
+
+    .navbar {
+        padding: 15px 20px;     /* Tighten up the header */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+        opacity: 0;
+    transition: 0.5s ease, color 0.3s ease; /* smooth entrance and color change */
+    pointer-events: none;  /* Prevents clicking links while invisible */
+    -webkit-tap-highlight-color: transparent; /* Removes the blue flash on mobile */
+    }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #121212;
+        padding: 20px;
+        text-align: center;
+        opacity: 1;
+    pointer-events: auto;
+    color: #c5a059;
+    }
+    .menu-toggle {
+    display: flex;
+    outline: none;                   /* Removes the blue border on desktops */
+    -webkit-tap-highlight-color: transparent; /* Show the 3 bars on mobile */
+}
+} /* end media query */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.gallery {
+    padding: 80px 10%;
+    background-color: #080808;
+    text-align: center;
+}
+
+.section-title {
+    color: #c5a059;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Very Pro! It adjusts itself for mobile! */
+    gap: 30px;
+}
+
+.product-item {
+    background: #111;
+    padding: 20px;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    background: #1a1a1a; /* Placeholder for a watch photo */
+    margin-bottom: 15px;
+}
+
+.product-item:hover {
+    border-color: #c5a059;
+}
+.hero-watch-image {
+    max-width: 400px; /* A good size for the watch on a laptop */
+    height: auto;
+    margin: 30px 0;    /* Adds space above and below the watch */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); /* Adds depth, making the watch look "float" over the background */
+}
+.product-img-file {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* This crops the image perfectly to fit the box */
+    margin-bottom: 15px;
+    filter: grayscale(20%); /* Adds a slight moody/luxury feel */
+    transition: 0.5s ease;
+}
+
+.product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* This is a pro-trick: it crops the photo to fit the box perfectly */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+}
+
+.product-item:hover .product-img-file {
+    filter: grayscale(0%); /* Brings back full color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+.product-item:hover .product-img {
+    transform: scale(1.05); /* The image zooms slightly when you hover */
+}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">AURA</div>
+    <ul class="nav-links">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Our Story</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</nav>
+        <div class="hero-section">
+    <h1>AURA</h1>
+    
+    <p>Time, Refined by Nature</p>
+    
+    <a href="#collections">
+        <button>Explore the Collection</button>
+    </a>
+</div>
+  <section class="features" id="discover">
+    <div class="feature-card">
+        <h3>Sustainably Sourced</h3>
+        <p>Every watch is crafted from 100% reclaimed wood and ocean-bound plastic.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Timeless Design</h3>
+        <p>Minimalist aesthetics meet mechanical precision for a lifetime of use.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Global Impact</h3>
+        <p>For every watch sold, we plant ten trees in reforestation projects worldwide.</p>
+    </div>
+</section>
+<section class="gallery reveal" id="collections">
+    <h2 class="section-title">The Collection</h2>
+    <div class="product-grid">
+        
+        <div class="product-item">
+            <img src="watchh1.jpg" alt="The Sterling Drift" class="product-img">
+            <h3>The Sterling Drift</h3>
+            <p>₹18,500</p>
+        </div>
+
+        <div class="product-item">
+            <img src="watchh2.jpg" alt="The Celestial Aura" class="product-img">
+            <h3>The Celestial Aura</h3>
+            <p>₹21,000</p>
+        </div>
+
+        <div class="product-item">
+            <img src="watchh3.jpg" alt="The Umber Catalyst" class="product-img">
+            <h3>The Umber Catalyst</h3>
+            <p>₹15,900</p>
+        </div>
+
+    </div>
+</section>
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 AURA Timepieces. Crafted for the conscious.</p>
+        <div class="social-links">
+            <span>Instagram</span>
+            <span>Twitter</span>
+            <span>Journal</span>
+        </div>
+    </div>
+</footer>
+<script>
+    //select the menu toggle and nav links
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    //listen for click on the menu toggle
+    menuToggle.addEventListener('click', () => {
+        //act
+        navLinks.classList.toggle('active');
+    });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+});
+
+const revealElements = document.querySelectorAll('.reveal');
+revealElements.forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
